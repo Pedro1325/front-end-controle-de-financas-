@@ -8,10 +8,7 @@ const calculateTotals = (list) => {
   const income = list
     .filter((t) => !t.expense)
     .reduce((acc, t) => acc + Number(t.amount), 0);
-  const expense = list
-    .filter((t) => t.expense)
-    .reduce((acc, t) => acc + Number(t.amount), 0);
-  return { income, expense, total: income - expense };
+  return { income, total: income  };
 };
 
 export const TransactionsProvider = ({ children }) => {
